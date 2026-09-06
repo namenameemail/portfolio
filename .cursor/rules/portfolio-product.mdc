@@ -1,0 +1,15 @@
+---
+description: Web portfolio product scope and responsive interaction rules
+alwaysApply: true
+---
+
+# Portfolio Product
+
+- This project is a **web portfolio** (browser site), not a native app
+- Every feature must work on both **mobile and desktop** viewports
+- Layout, typography, and spacing must be designed for both platforms from the start — do not ship desktop-only UI
+- Adapt interactivity to the platform when needed:
+  - desktop: hover, pointer precision, keyboard where relevant
+  - mobile: touch targets, no hover-only affordances, gestures instead of hover-dependent UX
+- Prefer one responsive implementation with platform-specific behavior over separate page forks
+- Do not assume a feature is done until both mobile and desktop behavior are considered

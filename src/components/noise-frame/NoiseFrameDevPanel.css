@@ -1,0 +1,46 @@
+.noise-frame-dev {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+  box-sizing: border-box;
+  width: 260px;
+  max-height: 100vh;
+  overflow: auto;
+  padding: 12px;
+  background: #111;
+  color: #eee;
+  font: 12px/1.4 system-ui, sans-serif;
+  border-left: 1px solid #333;
+}
+
+.noise-frame-dev__title {
+  margin: 0 0 12px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.noise-frame-dev__field {
+  display: grid;
+  gap: 4px;
+  margin-bottom: 10px;
+}
+
+.noise-frame-dev__field label {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.noise-frame-dev__field input[type='range'] {
+  width: 100%;
+}
+
+.noise-frame-dev__field select {
+  width: 100%;
+  background: #1a1a1a;
+  color: #eee;
+  border: 1px solid #444;
+  border-radius: 4px;
+  padding: 4px 6px;
+}

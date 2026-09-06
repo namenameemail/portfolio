@@ -1,0 +1,36 @@
+.noise-frame {
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+}
+
+.noise-frame__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.noise-frame__layer {
+  position: absolute;
+  inset: 0;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
+
+.noise-frame__layer--base {
+  z-index: 0;
+}
+
+.noise-frame__layer--overlay {
+  z-index: 1;
+  transform-origin: center center;
+  will-change: transform;
+}
+
+.noise-frame__content {
+  position: relative;
+  z-index: 1;
+}

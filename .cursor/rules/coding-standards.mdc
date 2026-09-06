@@ -1,0 +1,14 @@
+---
+description: Core coding standards for the portfolio project
+alwaysApply: true
+---
+
+# Coding Standards
+
+- Keep code dry: no comments, no noise, no dead code
+- Names of files, functions, and variables must be self-explanatory
+- No `console.log` unless debugging a concrete issue; remove before finishing
+- Prefer small focused files; extract when a file grows past ~100 lines or gains a second responsibility
+- Stack is React + Vite + TypeScript only; do not add dependencies unless the user explicitly asks
+- Identifiers and code in English; user-facing copy may be English or Russian as requested
+- Do not invent features, styling systems, or libs beyond the current task

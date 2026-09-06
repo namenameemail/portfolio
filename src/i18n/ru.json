@@ -1,0 +1,16 @@
+{
+  "meta": {
+    "title": "портфолио",
+    "lang": "ru"
+  },
+  "menu": {
+    "top": "Верх",
+    "bottom": "Низ",
+    "cvBio": "cv/bio",
+    "graphics": "графика",
+    "programs": "программы",
+    "devices": "устройства",
+    "contact": "контакты",
+    "locale": "русский"
+  }
+}

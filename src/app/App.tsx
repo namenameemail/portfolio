@@ -1,5 +1,4 @@
-import { Footer } from '../components/layout/Footer'
-import { Header } from '../components/layout/Header'
+import { AimMenu } from '../components/aim-menu/AimMenu'
 import { NoiseFrame } from '../components/noise-frame/NoiseFrame'
 import { About } from '../sections/About'
 import { Contact } from '../sections/Contact'
@@ -9,14 +8,14 @@ import { Projects } from '../sections/Projects'
 export function App() {
   return (
     <NoiseFrame>
-      <Header />
-      <main>
-        <Hero />
-        <About />
-        <Projects />
-        <Contact />
-      </main>
-      <Footer />
+      <AimMenu devMode>
+        <main>
+          <Hero />
+          <About />
+          <Projects />
+          <Contact />
+        </main>
+      </AimMenu>
     </NoiseFrame>
   )
 }

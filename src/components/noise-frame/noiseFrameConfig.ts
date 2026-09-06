@@ -10,12 +10,12 @@ export type NoiseFrameConfig = {
 }
 
 export const DEFAULT_NOISE_FRAME_CONFIG: NoiseFrameConfig = {
-  insetPx: 2,
+  insetPx: 0,
   paddingPx: 0,
-  rotateDeg: 0.6,
-  shiftPx: 1,
+  rotateDeg: 2.3,
+  shiftPx: 6,
   cursorMode: 'follow',
-  density: 0.56,
+  density: 0.78,
 }
 
 export const CURSOR_MODES: CursorMode[] = ['follow', 'inverse', 'axisX', 'axisY']

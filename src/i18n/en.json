@@ -1,0 +1,16 @@
+{
+  "meta": {
+    "title": "portfolio",
+    "lang": "en"
+  },
+  "menu": {
+    "top": "Top",
+    "bottom": "Bottom",
+    "cvBio": "cv/bio",
+    "graphics": "graphics",
+    "programs": "programs",
+    "devices": "devices",
+    "contact": "contact",
+    "locale": "english"
+  }
+}

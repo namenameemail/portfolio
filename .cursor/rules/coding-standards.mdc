@@ -10,5 +10,5 @@ alwaysApply: true
 - No `console.log` unless debugging a concrete issue; remove before finishing
 - Prefer small focused files; extract when a file grows past ~100 lines or gains a second responsibility
 - Stack is React + Vite + TypeScript only; do not add dependencies unless the user explicitly asks
-- Identifiers and code in English; user-facing copy may be English or Russian as requested
+- Identifiers and code in English; user-facing copy goes through i18n (ru + en)
 - Do not invent features, styling systems, or libs beyond the current task

@@ -30,6 +30,14 @@ function mapPointer(
   }
 }
 
+function scrollNorm(): { x: number; y: number } {
+  const maxScroll = document.documentElement.scrollHeight - window.innerHeight
+  if (maxScroll <= 0) return { x: 0, y: 0 }
+  const t = Math.min(1, Math.max(0, window.scrollY / maxScroll))
+  const n = t * 2 - 1
+  return { x: n, y: n }
+}
+
 export function usePointerParallax(
   overlayRef: RefObject<HTMLElement | null>,
   options: PointerParallaxOptions,
@@ -42,14 +50,12 @@ export function usePointerParallax(
 
   useEffect(() => {
     const overlay = overlayRef.current
-    if (!overlay) return
-
-    const finePointer = window.matchMedia('(pointer: fine)').matches
-    if (!options.enabled || !finePointer) {
-      overlay.style.transform = 'translate3d(0,0,0) rotate(0deg)'
+    if (!overlay || !options.enabled) {
+      if (overlay) overlay.style.transform = 'translate3d(0,0,0) rotate(0deg)'
       return
     }
 
+    const finePointer = window.matchMedia('(pointer: fine)').matches
     let rafId = 0
     let pointerX = 0
     let pointerY = 0
@@ -62,6 +68,12 @@ export function usePointerParallax(
       const halfH = window.innerHeight / 2 || 1
       pointerX = (event.clientX - halfW) / halfW
       pointerY = (event.clientY - halfH) / halfH
+    }
+
+    const onScroll = () => {
+      const n = scrollNorm()
+      pointerX = n.x
+      pointerY = n.y
     }
 
     const tick = () => {
@@ -77,13 +89,20 @@ export function usePointerParallax(
       rafId = window.requestAnimationFrame(tick)
     }
 
-    window.addEventListener('pointermove', onMove, { passive: true })
+    if (finePointer) {
+      window.addEventListener('pointermove', onMove, { passive: true })
+    } else {
+      onScroll()
+      window.addEventListener('scroll', onScroll, { passive: true })
+    }
+
     rafId = window.requestAnimationFrame(tick)
 
     return () => {
       running = false
       window.cancelAnimationFrame(rafId)
       window.removeEventListener('pointermove', onMove)
+      window.removeEventListener('scroll', onScroll)
       overlay.style.transform = 'translate3d(0,0,0) rotate(0deg)'
     }
   }, [overlayRef, options.enabled])

@@ -44,3 +44,50 @@
   border-radius: 4px;
   padding: 4px 6px;
 }
+
+.noise-frame-dev__section {
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.noise-frame-dev__section-title {
+  margin: 0 0 8px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #bbb;
+}
+
+.noise-frame-dev__row {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.noise-frame-dev__text,
+.noise-frame-dev__select {
+  flex: 1;
+  min-width: 0;
+  background: #1a1a1a;
+  color: #eee;
+  border: 1px solid #444;
+  border-radius: 4px;
+  padding: 4px 6px;
+  font: inherit;
+}
+
+.noise-frame-dev__btn {
+  flex-shrink: 0;
+  background: #2a2a2a;
+  color: #eee;
+  border: 1px solid #444;
+  border-radius: 4px;
+  padding: 4px 8px;
+  font: inherit;
+  cursor: pointer;
+}
+
+.noise-frame-dev__btn:disabled {
+  opacity: 0.4;
+  cursor: default;
+}

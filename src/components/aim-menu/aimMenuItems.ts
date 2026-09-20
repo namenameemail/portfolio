@@ -2,9 +2,7 @@ import type { MessageKey } from '../../i18n/locales'
 
 export type AimMenuItemId =
   | 'cv-bio'
-  | 'graphics'
-  | 'programs'
-  | 'devices'
+  | 'projects'
   | 'contact'
   | 'locale'
 
@@ -18,9 +16,7 @@ export type AimMenuItem = {
 
 export const AIM_MENU_ITEMS: AimMenuItem[] = [
   { id: 'cv-bio', labelKey: 'menu.cvBio', edge: 'top' },
-  { id: 'graphics', labelKey: 'menu.graphics', edge: 'top' },
-  { id: 'programs', labelKey: 'menu.programs', edge: 'top' },
-  { id: 'devices', labelKey: 'menu.devices', edge: 'bottom' },
+  { id: 'projects', labelKey: 'menu.projects', edge: 'top' },
   { id: 'contact', labelKey: 'menu.contact', edge: 'bottom' },
   { id: 'locale', labelKey: 'menu.locale', edge: 'bottom' },
 ]

@@ -19,7 +19,6 @@ export function LocaleProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     localStorage.setItem(LOCALE_STORAGE_KEY, locale)
     document.documentElement.lang = readMessage(locale, 'meta.lang')
-    document.title = readMessage(locale, 'meta.title')
   }, [locale])
 
   const value = useMemo(

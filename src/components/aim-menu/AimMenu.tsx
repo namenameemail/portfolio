@@ -15,6 +15,7 @@ type AimMenuProps = {
   children?: React.ReactNode
   className?: string
   devMode?: boolean
+  covered?: boolean
   onSelect?: (id: AimMenuItemId) => void
 }
 
@@ -22,17 +23,19 @@ export function AimMenu({
   children,
   className,
   devMode = false,
+  covered = false,
   onSelect,
 }: AimMenuProps) {
   const { t, cycleLocale } = useLocale()
   const containerRef = useRef<HTMLDivElement>(null)
   const itemRefs = useRef<Partial<Record<AimMenuItemId, HTMLElement | null>>>({})
   const finePointer = useFinePointer()
+  const aimEnabled = finePointer && !covered
 
   const { activeId, pointerRef, centerRef } = useAimTarget(
     containerRef,
     itemRefs,
-    finePointer,
+    aimEnabled,
   )
 
   const setItemRef = (id: AimMenuItemId, el: HTMLElement | null) => {
@@ -40,12 +43,18 @@ export function AimMenu({
   }
 
   const onClick = () => {
-    if (!finePointer || !activeId) return
+    if (!aimEnabled || !activeId) return
     if (activeId === 'locale') cycleLocale()
     onSelect?.(activeId)
   }
 
-  const rootClass = ['aim-menu', className ?? ''].filter(Boolean).join(' ')
+  const rootClass = [
+    'aim-menu',
+    covered ? 'aim-menu--covered' : '',
+    className ?? '',
+  ]
+    .filter(Boolean)
+    .join(' ')
 
   return (
     <div
@@ -80,7 +89,7 @@ export function AimMenu({
         ))}
       </nav>
 
-      {devMode && finePointer ? (
+      {devMode && aimEnabled ? (
         <AimMenuDevOverlay
           containerRef={containerRef}
           pointerRef={pointerRef}

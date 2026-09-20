@@ -1,4 +1,11 @@
+import { useState } from 'react'
 import { CURSOR_MODES, type NoiseFrameConfig } from './noiseFrameConfig'
+import {
+  loadPresets,
+  nextPresetName,
+  savePresets,
+  type NoiseFramePreset,
+} from './noiseFramePresets'
 import './NoiseFrameDevPanel.css'
 
 type NoiseFrameDevPanelProps = {
@@ -7,13 +14,86 @@ type NoiseFrameDevPanelProps = {
 }
 
 export function NoiseFrameDevPanel({ config, onChange }: NoiseFrameDevPanelProps) {
+  const [presets, setPresets] = useState<NoiseFramePreset[]>(loadPresets)
+  const [selectedName, setSelectedName] = useState('')
+  const [nameInput, setNameInput] = useState('')
+
   const set = <K extends keyof NoiseFrameConfig>(key: K, value: NoiseFrameConfig[K]) => {
     onChange({ ...config, [key]: value })
+  }
+
+  const persist = (next: NoiseFramePreset[]) => {
+    setPresets(next)
+    savePresets(next)
+  }
+
+  const onSave = () => {
+    const name = nameInput.trim() || nextPresetName(presets)
+    const entry = { name, config }
+    const index = presets.findIndex((p) => p.name === name)
+    const next =
+      index >= 0
+        ? presets.map((p, i) => (i === index ? entry : p))
+        : [...presets, entry]
+    persist(next)
+    setSelectedName(name)
+    setNameInput('')
+  }
+
+  const onSelect = (name: string) => {
+    setSelectedName(name)
+    const preset = presets.find((p) => p.name === name)
+    if (preset) onChange(preset.config)
+  }
+
+  const onDelete = () => {
+    if (!selectedName) return
+    const next = presets.filter((p) => p.name !== selectedName)
+    persist(next)
+    setSelectedName('')
   }
 
   return (
     <aside className="noise-frame-dev" aria-label="NoiseFrame dev controls">
       <p className="noise-frame-dev__title">NoiseFrame</p>
+
+      <div className="noise-frame-dev__section">
+        <p className="noise-frame-dev__section-title">Presets</p>
+        <div className="noise-frame-dev__row">
+          <input
+            type="text"
+            className="noise-frame-dev__text"
+            placeholder="name"
+            value={nameInput}
+            onChange={(e) => setNameInput(e.target.value)}
+          />
+          <button type="button" className="noise-frame-dev__btn" onClick={onSave}>
+            Save
+          </button>
+        </div>
+        <div className="noise-frame-dev__row">
+          <select
+            className="noise-frame-dev__select"
+            value={selectedName}
+            onChange={(e) => onSelect(e.target.value)}
+          >
+            <option value="">—</option>
+            {presets.map((preset) => (
+              <option key={preset.name} value={preset.name}>
+                {preset.name}
+              </option>
+            ))}
+          </select>
+          <button
+            type="button"
+            className="noise-frame-dev__btn"
+            onClick={onDelete}
+            disabled={!selectedName}
+          >
+            Delete
+          </button>
+        </div>
+      </div>
 
       <div className="noise-frame-dev__field">
         <label>

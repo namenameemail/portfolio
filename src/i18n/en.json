@@ -7,10 +7,21 @@
     "top": "Top",
     "bottom": "Bottom",
     "cvBio": "cv/bio",
-    "graphics": "graphics",
-    "programs": "programs",
-    "devices": "devices",
+    "projects": "projects",
     "contact": "contact",
     "locale": "english"
+  },
+  "pages": {
+    "cvBio": "cv/bio",
+    "projects": "projects",
+    "contact": "contact",
+    "back": "back"
+  },
+  "cvBio": {
+    "lead": "Short intro. Bio and approach text will go here.",
+    "sectionExperience": "experience",
+    "experienceBody": "Experience stub: roles, places, years.",
+    "sectionSkills": "skills",
+    "skillsBody": "Skills stub: stack, tools, interests."
   }
 }

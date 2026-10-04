@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import { motion } from 'motion/react'
 import { PAGE_TITLE_KEYS, type PageId } from '../app/routes'
 import { useLocale } from '../i18n/useLocale'
 import { CvBioPage } from './CvBioPage'
@@ -23,14 +24,27 @@ export function PageScreen({ pageId, open, skipEnter, onClose }: PageScreenProps
   const className = [
     'page-screen',
     pageId === 'projects' ? 'page-screen--wide' : '',
-    open ? 'page-screen--open' : '',
-    open && skipEnter ? 'page-screen--ready' : '',
   ]
     .filter(Boolean)
     .join(' ')
 
   return (
-    <div className={className} aria-hidden={!open}>
+    <motion.div
+      className={className}
+      aria-hidden={!open}
+      initial={false}
+      animate={{
+        opacity: open ? 1 : 0,
+        x: '-50%',
+        y: open ? 0 : 12,
+      }}
+      transition={
+        open && skipEnter
+          ? { duration: 0 }
+          : { duration: 0.3, ease: 'easeOut' }
+      }
+      style={{ pointerEvents: open ? 'auto' : 'none' }}
+    >
       <button
         type="button"
         className="page-screen__back"
@@ -43,6 +57,6 @@ export function PageScreen({ pageId, open, skipEnter, onClose }: PageScreenProps
       <div className="page-screen__body">
         {pageId === 'cv-bio' ? <CvBioPage /> : null}
       </div>
-    </div>
+    </motion.div>
   )
 }

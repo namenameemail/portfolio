@@ -9,6 +9,7 @@ alwaysApply: true
 - Names of files, functions, and variables must be self-explanatory
 - No `console.log` unless debugging a concrete issue; remove before finishing
 - Prefer small focused files; extract when a file grows past ~100 lines or gains a second responsibility
-- Stack is React + Vite + TypeScript only; do not add dependencies unless the user explicitly asks
+- Stack is React + Vite + TypeScript + Motion; do not add other dependencies unless the user explicitly asks
+- UI motion uses `motion/react`; prefer Motion over ad-hoc CSS transitions for enter/exit and interactive state
 - Identifiers and code in English; user-facing copy goes through i18n (ru + en)
 - Do not invent features, styling systems, or libs beyond the current task

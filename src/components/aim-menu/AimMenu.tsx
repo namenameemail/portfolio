@@ -1,4 +1,5 @@
 import { useRef } from 'react'
+import { motion } from 'motion/react'
 import { useLocale } from '../../i18n/useLocale'
 import {
   AIM_MENU_BOTTOM,
@@ -46,20 +47,21 @@ export function AimMenu({
     onSelect?.(activeId)
   }
 
-  const rootClass = [
-    'aim-menu',
-    covered ? 'aim-menu--covered' : '',
-    className ?? '',
-  ]
-    .filter(Boolean)
-    .join(' ')
+  const rootClass = ['aim-menu', className ?? ''].filter(Boolean).join(' ')
 
   return (
-    <div
+    <motion.div
       ref={containerRef}
       className={rootClass}
       data-active={activeId ?? undefined}
       onClick={onClick}
+      initial={false}
+      animate={{ opacity: covered ? 0 : 1 }}
+      transition={{ duration: 0.3, ease: 'easeOut' }}
+      style={{
+        pointerEvents: covered ? 'none' : undefined,
+        cursor: covered ? 'auto' : undefined,
+      }}
     >
       <div className="aim-menu__stage">{children}</div>
 
@@ -94,6 +96,6 @@ export function AimMenu({
           centerRef={centerRef}
         />
       ) : null}
-    </div>
+    </motion.div>
   )
 }

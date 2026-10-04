@@ -1,3 +1,4 @@
+import { motion } from 'motion/react'
 import type { AimMenuItemId } from './aimMenuItems'
 
 type AimMenuItemProps = {
@@ -9,13 +10,17 @@ type AimMenuItemProps = {
 
 export function AimMenuItem({ id, label, active, onRef }: AimMenuItemProps) {
   return (
-    <span
+    <motion.span
       ref={(el) => onRef(id, el)}
-      className={['aim-menu__item', active ? 'aim-menu__item--active' : '']
-        .filter(Boolean)
-        .join(' ')}
+      className="aim-menu__item"
+      initial={false}
+      animate={{
+        color: active ? '#777' : '#fff',
+        backgroundColor: active ? '#fff' : 'rgba(0,0,0,0)',
+      }}
+      transition={{ duration: 0.12, ease: 'easeOut' }}
     >
       {label}
-    </span>
+    </motion.span>
   )
 }

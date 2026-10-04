@@ -17,22 +17,6 @@
   background: #fff;
   color: #111;
   cursor: auto;
-  opacity: 0;
-  transform: translate(-50%, 12px);
-  pointer-events: none;
-  transition:
-    opacity 300ms ease,
-    transform 300ms ease;
-}
-
-.page-screen--open {
-  opacity: 1;
-  transform: translate(-50%, 0);
-  pointer-events: auto;
-}
-
-.page-screen--open.page-screen--ready {
-  transition: none;
 }
 
 .page-screen--wide {

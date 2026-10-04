@@ -14,7 +14,6 @@ import './AimMenu.css'
 type AimMenuProps = {
   children?: React.ReactNode
   className?: string
-  devMode?: boolean
   covered?: boolean
   onSelect?: (id: AimMenuItemId) => void
 }
@@ -22,7 +21,6 @@ type AimMenuProps = {
 export function AimMenu({
   children,
   className,
-  devMode = false,
   covered = false,
   onSelect,
 }: AimMenuProps) {
@@ -89,7 +87,7 @@ export function AimMenu({
         ))}
       </nav>
 
-      {devMode && aimEnabled ? (
+      {aimEnabled ? (
         <AimMenuDevOverlay
           containerRef={containerRef}
           pointerRef={pointerRef}

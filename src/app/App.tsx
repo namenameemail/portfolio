@@ -4,6 +4,8 @@ import type { AimMenuItemId } from '../components/aim-menu/aimMenuItems'
 import { NoiseFrame } from '../components/noise-frame/NoiseFrame'
 import { useLocale } from '../i18n/useLocale'
 import { PageScreen } from '../pages/PageScreen'
+import { FocalPage } from '../pages/focal/FocalPage'
+import { SpectralPage } from '../pages/spectral/SpectralPage'
 import { About } from '../sections/About'
 import { Contact } from '../sections/Contact'
 import { Hero } from '../sections/Hero'
@@ -18,7 +20,7 @@ function initialPageId(route: ReturnType<typeof usePathRoute>['route']): PageId 
 export function App() {
   const { route, navigate, skipEnter } = usePathRoute()
   const { t } = useLocale()
-  const pageOpen = route !== 'home'
+  const pageOpen = isPageId(route)
   const [pageId, setPageId] = useState<PageId>(() => initialPageId(route))
 
   if (isPageId(route) && route !== pageId) {
@@ -26,9 +28,17 @@ export function App() {
   }
 
   useEffect(() => {
-    if (pageOpen) return
+    if (route !== 'home') return
     document.title = t('meta.title')
-  }, [pageOpen, t])
+  }, [route, t])
+
+  if (route === 'spectral') {
+    return <SpectralPage onClose={() => navigate('home')} />
+  }
+
+  if (route === 'focal') {
+    return <FocalPage onClose={() => navigate('home')} />
+  }
 
   const onSelect = (id: AimMenuItemId) => {
     if (id === 'locale' || !isPageId(id)) return
@@ -36,9 +46,8 @@ export function App() {
   }
 
   return (
-    <NoiseFrame devMode>
+    <NoiseFrame>
       <AimMenu
-        devMode
         covered={pageOpen}
         onSelect={onSelect}
       >

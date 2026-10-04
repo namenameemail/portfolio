@@ -19,12 +19,15 @@ export type MessageKey =
   | 'pages.cvBio'
   | 'pages.projects'
   | 'pages.contact'
+  | 'pages.spectral'
+  | 'pages.focal'
   | 'pages.back'
   | 'cvBio.lead'
   | 'cvBio.sectionExperience'
   | 'cvBio.experienceBody'
   | 'cvBio.sectionSkills'
   | 'cvBio.skillsBody'
+  | 'spectral.mark'
 
 export const LOCALE_STORAGE_KEY = 'portfolio-locale'
 

@@ -22,6 +22,7 @@ export function PageScreen({ pageId, open, skipEnter, onClose }: PageScreenProps
 
   const className = [
     'page-screen',
+    pageId === 'projects' ? 'page-screen--wide' : '',
     open ? 'page-screen--open' : '',
     open && skipEnter ? 'page-screen--ready' : '',
   ]

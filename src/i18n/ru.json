@@ -15,6 +15,8 @@
     "cvBio": "cv/bio",
     "projects": "проекты",
     "contact": "контакты",
+    "spectral": "spectral",
+    "focal": "focal",
     "back": "назад"
   },
   "cvBio": {
@@ -23,5 +25,8 @@
     "experienceBody": "Заготовка блока опыта: места работы, роли, годы.",
     "sectionSkills": "навыки",
     "skillsBody": "Заготовка блока навыков: стек, инструменты, интересы."
+  },
+  "spectral": {
+    "mark": "SEE"
   }
 }

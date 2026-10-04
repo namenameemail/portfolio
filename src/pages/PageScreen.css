@@ -35,6 +35,10 @@
   transition: none;
 }
 
+.page-screen--wide {
+  --page-max-width: 100vw;
+}
+
 .page-screen__back {
   margin: 0;
   padding: 0;

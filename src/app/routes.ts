@@ -4,7 +4,7 @@ export const PAGE_IDS = ['cv-bio', 'projects', 'contact'] as const
 
 export type PageId = (typeof PAGE_IDS)[number]
 
-export type AppRoute = 'home' | PageId
+export type AppRoute = 'home' | PageId | 'spectral' | 'focal'
 
 export const PAGE_TITLE_KEYS: Record<PageId, MessageKey> = {
   'cv-bio': 'pages.cvBio',
@@ -25,5 +25,7 @@ export function pageFromPathname(pathname: string): AppRoute {
   const parts = pathname.split('/').filter(Boolean)
   const last = parts[parts.length - 1] ?? ''
   if (!last || last === 'portfolio' || last === 'index.html') return 'home'
+  if (last === 'spectral') return 'spectral'
+  if (last === 'focal') return 'focal'
   return isPageId(last) ? last : 'home'
 }

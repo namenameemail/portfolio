@@ -15,7 +15,7 @@ export function AimMenuItem({ id, label, active, onRef }: AimMenuItemProps) {
       className="aim-menu__item"
       initial={false}
       animate={{
-        color: active ? '#777' : '#fff',
+        color: active ? '#111' : '#fff',
         backgroundColor: active ? '#fff' : 'rgba(0,0,0,0)',
       }}
       transition={{ duration: 0.12, ease: 'easeOut' }}

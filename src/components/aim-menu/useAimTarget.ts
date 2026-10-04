@@ -88,13 +88,13 @@ export function useAimTarget(
       rafId = window.requestAnimationFrame(tick)
     }
 
-    container.addEventListener('pointermove', onMove, { passive: true })
+    window.addEventListener('pointermove', onMove, { passive: true })
     rafId = window.requestAnimationFrame(tick)
 
     return () => {
       running = false
       window.cancelAnimationFrame(rafId)
-      container.removeEventListener('pointermove', onMove)
+      window.removeEventListener('pointermove', onMove)
     }
   }, [containerRef, itemRefs, enabled])
 

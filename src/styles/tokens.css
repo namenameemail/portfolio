@@ -3,4 +3,5 @@
   --color-text: #111;
   --font-sans: system-ui, sans-serif;
   --font-serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --font-size-button: clamp(1.125rem, 0.95rem + 0.85vw, 1.75rem);
 }

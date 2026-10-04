@@ -1,5 +1,9 @@
 import { useState } from 'react'
-import { CURSOR_MODES, type NoiseFrameConfig } from './noiseFrameConfig'
+import {
+  type NoiseFrameConfig,
+  type PointerAxis,
+  type PointerRange,
+} from './noiseFrameConfig'
 import {
   loadPresets,
   nextPresetName,
@@ -125,66 +129,108 @@ export function NoiseFrameDevPanel({ config, onChange }: NoiseFrameDevPanelProps
         />
       </div>
 
+      <RangeControl
+        label="shiftX"
+        range={config.shiftX}
+        min={-80}
+        max={80}
+        step={1}
+        digits={0}
+        onChange={(next) => set('shiftX', next)}
+      />
+      <RangeControl
+        label="shiftY"
+        range={config.shiftY}
+        min={-80}
+        max={80}
+        step={1}
+        digits={0}
+        onChange={(next) => set('shiftY', next)}
+      />
+      <RangeControl
+        label="rotate"
+        range={config.rotate}
+        min={-45}
+        max={45}
+        step={0.1}
+        digits={1}
+        onChange={(next) => set('rotate', next)}
+      />
+      <RangeControl
+        label="scale"
+        range={config.scale}
+        min={0.5}
+        max={2}
+        step={0.01}
+        digits={2}
+        onChange={(next) => set('scale', next)}
+      />
+    </aside>
+  )
+}
+
+function RangeControl({
+  label,
+  range,
+  min,
+  max,
+  step,
+  digits,
+  onChange,
+}: {
+  label: string
+  range: PointerRange
+  min: number
+  max: number
+  step: number
+  digits: number
+  onChange: (next: PointerRange) => void
+}) {
+  const setAxis = (axis: PointerAxis) => onChange({ ...range, axis })
+
+  return (
+    <div className="noise-frame-dev__section">
+      <p className="noise-frame-dev__section-title">{label}</p>
       <div className="noise-frame-dev__field">
         <label>
-          <span>rotateDeg</span>
-          <span>{config.rotateDeg.toFixed(1)}</span>
+          <span>from</span>
+          <span>{range.from.toFixed(digits)}</span>
         </label>
         <input
           type="range"
-          min={0}
-          max={8}
-          step={0.1}
-          value={config.rotateDeg}
-          onChange={(e) => set('rotateDeg', Number(e.target.value))}
+          min={min}
+          max={max}
+          step={step}
+          value={range.from}
+          onChange={(event) => onChange({ ...range, from: Number(event.target.value) })}
         />
       </div>
-
       <div className="noise-frame-dev__field">
         <label>
-          <span>shiftPx</span>
-          <span>{config.shiftPx}</span>
+          <span>to</span>
+          <span>{range.to.toFixed(digits)}</span>
         </label>
         <input
           type="range"
-          min={0}
-          max={24}
-          step={1}
-          value={config.shiftPx}
-          onChange={(e) => set('shiftPx', Number(e.target.value))}
+          min={min}
+          max={max}
+          step={step}
+          value={range.to}
+          onChange={(event) => onChange({ ...range, to: Number(event.target.value) })}
         />
       </div>
-
       <div className="noise-frame-dev__field">
         <label>
-          <span>density</span>
-          <span>{config.density.toFixed(2)}</span>
-        </label>
-        <input
-          type="range"
-          min={0}
-          max={1}
-          step={0.01}
-          value={config.density}
-          onChange={(e) => set('density', Number(e.target.value))}
-        />
-      </div>
-
-      <div className="noise-frame-dev__field">
-        <label>
-          <span>cursorMode</span>
+          <span>axis</span>
         </label>
         <select
-          value={config.cursorMode}
-          onChange={(e) => set('cursorMode', e.target.value as NoiseFrameConfig['cursorMode'])}
+          value={range.axis}
+          onChange={(event) => setAxis(event.target.value as PointerAxis)}
         >
-          {CURSOR_MODES.map((mode) => (
-            <option key={mode} value={mode}>
-              {mode}
-            </option>
-          ))}
+          <option value="x">x</option>
+          <option value="y">y</option>
         </select>
       </div>
-    </aside>
+    </div>
   )
 }

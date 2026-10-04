@@ -33,4 +33,6 @@
 .noise-frame__content {
   position: relative;
   z-index: 2;
+  min-height: inherit;
+  height: 100%;
 }

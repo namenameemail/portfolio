@@ -13,7 +13,7 @@
 }
 
 .aim-menu__rail {
-  position: fixed;
+  position: absolute;
   left: 0;
   right: 0;
   z-index: 50;
@@ -31,6 +31,7 @@
 }
 
 .aim-menu__rail--bottom {
+  position: fixed;
   bottom: 0;
 }
 
@@ -38,7 +39,7 @@
   margin: 0;
   padding: 0.12em 0.3em;
   font-family: var(--font-serif);
-  font-size: 1rem;
+  font-size: 3.2vmin;
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: lowercase;

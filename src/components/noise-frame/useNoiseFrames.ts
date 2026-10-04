@@ -1,5 +1,8 @@
 import { useEffect, useState, type RefObject } from 'react'
 import { computeOverscanPx } from './computeOverscanPx'
+import type { PointerRange } from './noiseFrameConfig'
+
+const TEXELS_PER_DEVICE_PX = 2.1 / 1.5
 
 function createBinaryNoiseBlob(
   width: number,
@@ -31,8 +34,10 @@ function createBinaryNoiseBlob(
 export function useNoiseFrames(
   containerRef: RefObject<HTMLElement | null>,
   density: number,
-  rotateDeg: number,
-  shiftPx: number,
+  shiftX: PointerRange,
+  shiftY: PointerRange,
+  rotate: PointerRange,
+  scale: PointerRange,
 ) {
   const [frameUrl, setFrameUrl] = useState('')
   const [overscanPx, setOverscanPx] = useState(0)
@@ -54,12 +59,20 @@ export function useNoiseFrames(
     }
 
     const generate = async (width: number, height: number) => {
-      const contentW = Math.max(1, Math.ceil(width))
-      const contentH = Math.max(1, Math.ceil(height))
-      const overscan = computeOverscanPx(contentW, contentH, rotateDeg, shiftPx)
-      const w = contentW + overscan * 2
-      const h = contentH + overscan * 2
-      const key = `${w}x${h}:${density}:${overscan}`
+      const contentW = Math.max(1, width)
+      const contentH = Math.max(1, height)
+      const sampling = (window.devicePixelRatio || 1) * TEXELS_PER_DEVICE_PX
+      const overscan = computeOverscanPx(
+        contentW,
+        contentH,
+        shiftX,
+        shiftY,
+        rotate,
+        scale,
+      )
+      const w = Math.max(1, Math.ceil((contentW + overscan * 2) * sampling))
+      const h = Math.max(1, Math.ceil((contentH + overscan * 2) * sampling))
+      const key = `${w}x${h}:${density}:${overscan}:${sampling}`
       if (key === lastKey && blobUrl) {
         setOverscanPx(overscan)
         return
@@ -93,13 +106,35 @@ export function useNoiseFrames(
     const rect = el.getBoundingClientRect()
     void generate(rect.width, rect.height)
 
+    const onWindowResize = () => {
+      const next = el.getBoundingClientRect()
+      schedule(next.width, next.height)
+    }
+    window.addEventListener('resize', onWindowResize)
+
+    let dprQuery = window.matchMedia(
+      `(resolution: ${window.devicePixelRatio || 1}dppx)`,
+    )
+    const onDprChange = () => {
+      const next = el.getBoundingClientRect()
+      schedule(next.width, next.height)
+      dprQuery.removeEventListener('change', onDprChange)
+      dprQuery = window.matchMedia(
+        `(resolution: ${window.devicePixelRatio || 1}dppx)`,
+      )
+      dprQuery.addEventListener('change', onDprChange)
+    }
+    dprQuery.addEventListener('change', onDprChange)
+
     return () => {
       cancelled = true
       window.clearTimeout(debounceId)
       observer.disconnect()
+      window.removeEventListener('resize', onWindowResize)
+      dprQuery.removeEventListener('change', onDprChange)
       revoke()
     }
-  }, [containerRef, density, rotateDeg, shiftPx])
+  }, [containerRef, density, rotate, scale, shiftX, shiftY])
 
   return { frameUrl, overscanPx }
 }

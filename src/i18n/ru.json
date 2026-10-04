@@ -28,5 +28,77 @@
   },
   "spectral": {
     "mark": "SEE"
+  },
+  "projects": {
+    "groups": {
+      "web": "веб",
+      "devices": "девайсы"
+    },
+    "rasterscape": {
+      "title": "rasterscape",
+      "teaser": "Персонализированный генератор изображений на стыке генеративной графики и графического редактора.",
+      "musicHeading": "технически обусловленная музыка",
+      "musicBody": "Есть такие жанры музыки (все?), которые обусловлены определенным оборудованием, определенным программным обеспечением, инструментом. Шире говоря, инструмент оказывает влияние на произведение в большей или меньшей степени, приводя к тому, что автору приходится идти на компромисс, мирясь с тем как выбранный инструмент влияет на процесс работы.\n\nВ этой серии работ мы много на себя берем и выходим на мнимую ось треугольника автор-инструмент-предмет-произведение, где произведением становится инструмент, а предметом работы становится предоставляемый инструментом процесс, который существует не во времени, а в интерфейсе, заключая в себе потенциальное пространство артефактов.\n\nТаким образом работа из себя представляет систему отношений между автором, инструментом, пользователем, процессом, потенциальным пространством, артефактами, и не в последнюю очередь исследование пространства артефактов, как реализацию разрабатываемого процесса.\nперсонализация через инструмент\nВ случае rasterscape инструментом является графический редактор, а процессом - процесс создания изображения.\nrasterscape совмещает генеративную графику и графический редактор в форме персонализированного генератора изображений. Алгоритмическая графика обогащается пользовательским вводом в реальном времени, а графический редактор строится как система инструментов обладающая достаточной интероперабельностью и свободой, чтобы давать пространство для энтропии.\n\nЭта работа посвящается тем, кто пишет только палкой, которую сам нашел в лесу, и делает кисти из белок, которых убил сам в лесу.",
+      "spaceHeading": "мнимая и вещественные части цифрового пространства",
+      "spaceBody": "Для этой серии важно то, что цифровое пространство, за счет своей многомерности и наличия вот этой мнимой части, позволяет не только создавать конструкции, но и создавать и визуализировать рекурсивные пространства из произвольных измерений.\n\nПрограммы можно сказать произрастают, или эволюционируют в том смысле что несут на себе след предыдущих этапов жизненного цикла. Из конкретной функции абстрагированием производятся общие задачи, из которых складывается этот вид универсальности.",
+      "interfaceHeading": "программа-интерфейс",
+      "interfaceBody": "Инструмент в данном случае является программой, а программа имеет интерактивный интерфейс. Процесс конструируется также за счет реформирования отношений программовости и интерфейсных клише, а цифровое пространство за счет своей многомерности и наличия мнимой части позволяет не только создавать внутри процесса конструкции, но и создавать и визуализировать рекурсивные пространства из произвольных измерений.\n\nФункции программы можно разделить на сервисные и доменные.\nСервисные - присущи хостовой экосистеме, доменные - работают с предметом программы. Rasterscape работает с их взаимопроникновением, исследует условность и границу этого разделения. Граница расширяется, за счет наполнения функциями явно не относящимися ни к одной из сторон, ни к предмету программы.\n\nфункции программы стремятся не находиться в центре какой-то предметной области (единственным критерием остается графичность), а интуитивность не находится в центре дизайна интерфейса, в центр помещается размытие программовости с аберрациями редакторовости. Интерфейс строится по принципам несуществующего, как мнимая основа для украшения системой.\n\nИнтерфейс определяет потенциальное пространство артефактов - все то, что с его помощью можно создать. Часто программы содержат функционал, который формально покрывает все пространство формата данных, как например в графических редакторах обычно есть полный контроль над канвасом за счет наличия кисти размера 1 пиксель и выбора цвета кисти. Но интерфейс, что важнее, определяет также фрактал дорог/путей в потенциальном пространстве. Форма этого фрактала - центральный предмет эстетики rasterscape.",
+      "recursionHeading": "рекурсия обусловленности",
+      "recursionBody": "Rasterscape как произведение остается технически обусловленным, но пытается включить в себя эту обусловленность через использование инструмента создания (язык программирования и его экосистема) как почвы для функциональности."
+    },
+    "aup": {
+      "title": "aup",
+      "teaser": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "sectionHeading": "lorem ipsum",
+      "sectionBody": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    },
+    "cchhees": {
+      "title": "cchhees",
+      "teaser": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "sectionHeading": "lorem ipsum",
+      "sectionBody": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+    },
+    "hover": {
+      "title": ":hover",
+      "teaser": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "sectionHeading": "lorem ipsum",
+      "sectionBody": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+    },
+    "waalll": {
+      "title": "waalll",
+      "teaser": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "sectionHeading": "lorem ipsum",
+      "sectionBody": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+    },
+    "filter": {
+      "title": "filter",
+      "teaser": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "sectionHeading": "lorem ipsum",
+      "sectionBody": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+    },
+    "mouse1": {
+      "title": "mouse 1",
+      "teaser": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "sectionHeading": "lorem ipsum",
+      "sectionBody": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+    },
+    "piramidi": {
+      "title": "piramidi",
+      "teaser": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "sectionHeading": "lorem ipsum",
+      "sectionBody": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+    },
+    "ride": {
+      "title": "ride",
+      "teaser": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "sectionHeading": "lorem ipsum",
+      "sectionBody": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+    },
+    "darina": {
+      "title": "Дарина",
+      "teaser": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "sectionHeading": "lorem ipsum",
+      "sectionBody": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+    }
   }
 }

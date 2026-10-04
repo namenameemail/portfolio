@@ -1,0 +1,224 @@
+.projects.landing-panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.projects--expanded.landing-panel {
+  padding-inline: 0;
+  padding-bottom: 0;
+}
+
+.projects--expanded .landing-panel__title {
+  padding-inline: clamp(1.5rem, 4vw, 3rem);
+  margin-bottom: 1rem;
+}
+
+.projects__back {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  cursor: pointer;
+}
+
+.projects__catalog {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2.5rem, 6vw, 4.5rem);
+}
+
+.projects__group--web,
+.projects__group--devices {
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border: 1px solid #ddd;
+  background: #fafafa;
+}
+
+.projects__group--solo {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.projects__group-title {
+  margin: 0 0 1.25rem;
+  font-family: var(--font-serif);
+  font-size: clamp(1rem, 0.95rem + 0.3vw, 1.2rem);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: lowercase;
+  color: #666;
+}
+
+.projects__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1rem, 2.5vw, 1.75rem);
+}
+
+.projects__solo {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1.25rem, 3vw, 2rem);
+}
+
+@media (max-width: 900px) {
+  .projects__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .projects__grid,
+  .projects__solo {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.projects__card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.projects__card--solo {
+  gap: 0.85rem;
+}
+
+.projects__card--solo .projects__card-media {
+  aspect-ratio: 16 / 10;
+}
+
+.projects__card--solo .projects__card-name {
+  font-size: clamp(1.35rem, 1.15rem + 0.7vw, 1.85rem);
+}
+
+.projects__card-media {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 11;
+  object-fit: cover;
+}
+
+.projects__card-name {
+  font-family: var(--font-serif);
+  font-size: clamp(1.1rem, 1rem + 0.4vw, 1.35rem);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: lowercase;
+}
+
+.projects__card-teaser {
+  font-family: var(--font-sans);
+  font-size: clamp(0.85rem, 0.8rem + 0.2vw, 0.95rem);
+  line-height: 1.45;
+  color: #444;
+}
+
+.projects__list {
+  display: flex;
+  flex-direction: column;
+}
+
+.projects__detail {
+  display: grid;
+  grid-template-columns: minmax(0, 25vw) minmax(0, 1fr);
+  align-items: start;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+.projects__visual {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+  background: #f2f2f2;
+}
+
+.projects__visual-media {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.projects__copy {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  box-sizing: border-box;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: clamp(1.5rem, 4vw, 3rem);
+}
+
+.projects__name {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: clamp(1.25rem, 1.1rem + 0.6vw, 1.75rem);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: lowercase;
+}
+
+.projects__section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.projects__heading {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: var(--font-size-button);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: lowercase;
+}
+
+.projects__text {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: clamp(0.9rem, 0.85rem + 0.25vw, 1.05rem);
+  line-height: 1.55;
+  color: #333;
+  white-space: pre-line;
+}
+
+.projects__video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  background: #111;
+}
+
+@media (max-width: 768px) {
+  .projects__detail {
+    grid-template-columns: 1fr;
+  }
+
+  .projects__visual {
+    position: relative;
+    height: auto;
+    aspect-ratio: 16 / 11;
+  }
+
+  .projects__copy {
+    min-height: 0;
+  }
+}

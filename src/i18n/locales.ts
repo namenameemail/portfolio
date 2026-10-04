@@ -7,27 +7,16 @@ export type Locale = (typeof LOCALES)[number]
 
 export const MESSAGES = { ru, en } as const
 
-export type MessageKey =
-  | 'meta.title'
-  | 'meta.lang'
-  | 'menu.top'
-  | 'menu.bottom'
-  | 'menu.cvBio'
-  | 'menu.projects'
-  | 'menu.contact'
-  | 'menu.locale'
-  | 'pages.cvBio'
-  | 'pages.projects'
-  | 'pages.contact'
-  | 'pages.spectral'
-  | 'pages.focal'
-  | 'pages.back'
-  | 'cvBio.lead'
-  | 'cvBio.sectionExperience'
-  | 'cvBio.experienceBody'
-  | 'cvBio.sectionSkills'
-  | 'cvBio.skillsBody'
-  | 'spectral.mark'
+type MessageLeaf<T, Prefix extends string = ''> = T extends string
+  ? Prefix
+  : {
+      [K in keyof T & string]: MessageLeaf<
+        T[K],
+        Prefix extends '' ? K : `${Prefix}.${K}`
+      >
+    }[keyof T & string]
+
+export type MessageKey = MessageLeaf<typeof ru>
 
 export const LOCALE_STORAGE_KEY = 'portfolio-locale'
 

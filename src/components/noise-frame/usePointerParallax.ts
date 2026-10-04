@@ -1,41 +1,12 @@
 import { useEffect, useRef, type RefObject } from 'react'
-import type { CursorMode } from './noiseFrameConfig'
+import { pointerRangeValue, type PointerRange } from './noiseFrameConfig'
 
 type PointerParallaxOptions = {
   enabled: boolean
-  rotateDeg: number
-  shiftPx: number
-  cursorMode: CursorMode
-}
-
-type ParallaxTarget = {
-  x: number
-  y: number
-}
-
-function mapPointer(
-  nx: number,
-  ny: number,
-  mode: CursorMode,
-): ParallaxTarget {
-  switch (mode) {
-    case 'inverse':
-      return { x: -nx, y: -ny }
-    case 'axisX':
-      return { x: nx, y: 0 }
-    case 'axisY':
-      return { x: 0, y: ny }
-    default:
-      return { x: nx, y: ny }
-  }
-}
-
-function scrollNorm(): { x: number; y: number } {
-  const maxScroll = document.documentElement.scrollHeight - window.innerHeight
-  if (maxScroll <= 0) return { x: 0, y: 0 }
-  const t = Math.min(1, Math.max(0, window.scrollY / maxScroll))
-  const n = t * 2 - 1
-  return { x: n, y: n }
+  shiftX: PointerRange
+  shiftY: PointerRange
+  rotate: PointerRange
+  scale: PointerRange
 }
 
 export function usePointerParallax(
@@ -51,7 +22,7 @@ export function usePointerParallax(
   useEffect(() => {
     const overlay = overlayRef.current
     if (!overlay || !options.enabled) {
-      if (overlay) overlay.style.transform = 'translate3d(0,0,0) rotate(0deg)'
+      if (overlay) overlay.style.transform = 'translate3d(0,0,0) rotate(0deg) scale(1)'
       return
     }
 
@@ -71,21 +42,27 @@ export function usePointerParallax(
     }
 
     const onScroll = () => {
-      const n = scrollNorm()
-      pointerX = n.x
-      pointerY = n.y
+      const maxScroll = document.documentElement.scrollHeight - window.innerHeight
+      if (maxScroll <= 0) {
+        pointerX = 0
+        pointerY = 0
+        return
+      }
+      const n = Math.min(1, Math.max(0, window.scrollY / maxScroll)) * 2 - 1
+      pointerX = n
+      pointerY = n
     }
 
     const tick = () => {
       if (!running) return
-      const { rotateDeg, shiftPx, cursorMode } = optionsRef.current
-      const mapped = mapPointer(pointerX, pointerY, cursorMode)
-      currentX += (mapped.x - currentX) * 0.12
-      currentY += (mapped.y - currentY) * 0.12
-      const tx = currentX * shiftPx
-      const ty = currentY * shiftPx
-      const rot = currentX * rotateDeg
-      overlay.style.transform = `translate3d(${tx}px, ${ty}px, 0) rotate(${rot}deg)`
+      const { shiftX, shiftY, rotate, scale } = optionsRef.current
+      currentX += (pointerX - currentX) * 0.12
+      currentY += (pointerY - currentY) * 0.12
+      const tx = pointerRangeValue(shiftX, currentX, currentY)
+      const ty = pointerRangeValue(shiftY, currentX, currentY)
+      const rot = pointerRangeValue(rotate, currentX, currentY)
+      const nextScale = pointerRangeValue(scale, currentX, currentY)
+      overlay.style.transform = `translate3d(${tx}px, ${ty}px, 0) rotate(${rot}deg) scale(${nextScale})`
       rafId = window.requestAnimationFrame(tick)
     }
 
@@ -103,7 +80,7 @@ export function usePointerParallax(
       window.cancelAnimationFrame(rafId)
       window.removeEventListener('pointermove', onMove)
       window.removeEventListener('scroll', onScroll)
-      overlay.style.transform = 'translate3d(0,0,0) rotate(0deg)'
+      overlay.style.transform = 'translate3d(0,0,0) rotate(0deg) scale(1)'
     }
   }, [overlayRef, options.enabled])
 }

@@ -43,6 +43,8 @@ export function AimMenu({
 
   const onClick = () => {
     if (!aimEnabled || !activeId) return
+    const item = itemRefs.current[activeId]
+    if (item && window.scrollY > item.offsetHeight) return
     if (activeId === 'locale') cycleLocale()
     onSelect?.(activeId)
   }

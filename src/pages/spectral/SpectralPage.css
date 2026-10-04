@@ -56,7 +56,7 @@
   border: 0;
   background: rgba(255, 255, 255, 0.82);
   font-family: var(--font-serif);
-  font-size: 1rem;
+  font-size: var(--font-size-button);
   font-weight: 500;
   letter-spacing: 0.04em;
   text-transform: lowercase;

@@ -1,0 +1,11 @@
+.landing-hero {
+  height: 100vh;
+  height: 100dvh;
+}
+
+.landing-hero .noise-frame,
+.landing-hero .noise-frame__content,
+.landing-hero .aim-menu {
+  min-height: 100%;
+  height: 100%;
+}

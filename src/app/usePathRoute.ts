@@ -7,13 +7,9 @@ function readRoute(): AppRoute {
 
 export function usePathRoute() {
   const [route, setRoute] = useState<AppRoute>(readRoute)
-  const [skipEnter, setSkipEnter] = useState(() => readRoute() !== 'home')
 
   useEffect(() => {
-    const onPop = () => {
-      setSkipEnter(false)
-      setRoute(readRoute())
-    }
+    const onPop = () => setRoute(readRoute())
     window.addEventListener('popstate', onPop)
     return () => window.removeEventListener('popstate', onPop)
   }, [])
@@ -22,9 +18,8 @@ export function usePathRoute() {
     const path = pathFor(next)
     const url = next === 'home' ? path : `./${path}`
     window.history.pushState(null, '', url)
-    setSkipEnter(false)
     setRoute(next)
   }, [])
 
-  return { route, navigate, skipEnter }
+  return { route, navigate }
 }

@@ -28,5 +28,77 @@
   },
   "spectral": {
     "mark": "SEE"
+  },
+  "projects": {
+    "groups": {
+      "web": "web",
+      "devices": "devices"
+    },
+    "rasterscape": {
+      "title": "rasterscape",
+      "teaser": "A personalized image generator at the seam of generative graphics and a graphic editor.",
+      "musicHeading": "technically conditioned music",
+      "musicBody": "There are genres of music (all of them?) that are conditioned by particular equipment, particular software, an instrument. More broadly, the instrument influences the work to a greater or lesser degree, so that the author has to compromise, accepting how the chosen instrument shapes the working process.\n\nIn this series we take a lot on ourselves and step onto an imaginary axis of the author–instrument–subject–work triangle, where the instrument becomes the work, and the subject of the work becomes the process the instrument provides — a process that exists not in time but in the interface, enclosing a potential space of artifacts.\n\nThus the work is a system of relations between author, instrument, user, process, potential space, artifacts, and not least an inquiry into the space of artifacts as a realization of the process being developed.\npersonalization through the instrument\nIn rasterscape the instrument is a graphic editor, and the process is the process of making an image.\nrasterscape joins generative graphics and a graphic editor in the form of a personalized image generator. Algorithmic graphics are enriched by real-time user input, and the graphic editor is built as a system of tools with enough interoperability and freedom to leave room for entropy.\n\nThis work is dedicated to those who write only with a stick they found in the forest, and make brushes from squirrels they killed themselves in the forest.",
+      "spaceHeading": "imaginary and real parts of digital space",
+      "spaceBody": "What matters for this series is that digital space, through its multidimensionality and this imaginary part, allows not only building constructions, but also creating and visualizing recursive spaces of arbitrary dimensions.\n\nPrograms can be said to grow, or evolve, in the sense that they carry traces of earlier stages of their life cycle. From a concrete function, abstraction produces general tasks, and from those this kind of universality is assembled.",
+      "interfaceHeading": "program-interface",
+      "interfaceBody": "The instrument here is a program, and the program has an interactive interface. The process is also constructed by reforming the relations of programmability and interface clichés, and digital space, through its multidimensionality and imaginary part, allows not only building constructions inside the process, but also creating and visualizing recursive spaces of arbitrary dimensions.\n\nProgram functions can be split into service and domain ones.\nService functions belong to the host ecosystem; domain ones work with the subject of the program. Rasterscape works with their interpenetration, probing the contingency and boundary of that split. The boundary expands by filling in functions that clearly belong to neither side, nor to the subject of the program.\n\nThe program’s functions tend not to sit at the center of any subject domain (the only remaining criterion is graphicness), and intuitiveness is not at the center of the interface design — at the center is a blurring of programmability with aberrations of editor-ness. The interface is built on principles of the non-existent, as an imaginary ground for decoration by the system.\n\nThe interface defines the potential space of artifacts — everything that can be made with it. Programs often contain functionality that formally covers the whole space of a data format; for example graphic editors usually give full control over the canvas via a 1-pixel brush and a brush color picker. But more importantly, the interface also defines the fractal of roads/paths in potential space. The shape of that fractal is the central aesthetic subject of rasterscape.",
+      "recursionHeading": "recursion of conditioning",
+      "recursionBody": "As a work, rasterscape remains technically conditioned, but tries to include that conditioning by using the tool of making (a programming language and its ecosystem) as soil for functionality."
+    },
+    "aup": {
+      "title": "aup",
+      "teaser": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "sectionHeading": "lorem ipsum",
+      "sectionBody": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    },
+    "cchhees": {
+      "title": "cchhees",
+      "teaser": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "sectionHeading": "lorem ipsum",
+      "sectionBody": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+    },
+    "hover": {
+      "title": ":hover",
+      "teaser": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "sectionHeading": "lorem ipsum",
+      "sectionBody": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+    },
+    "waalll": {
+      "title": "waalll",
+      "teaser": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "sectionHeading": "lorem ipsum",
+      "sectionBody": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+    },
+    "filter": {
+      "title": "filter",
+      "teaser": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "sectionHeading": "lorem ipsum",
+      "sectionBody": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+    },
+    "mouse1": {
+      "title": "mouse 1",
+      "teaser": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "sectionHeading": "lorem ipsum",
+      "sectionBody": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+    },
+    "piramidi": {
+      "title": "piramidi",
+      "teaser": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "sectionHeading": "lorem ipsum",
+      "sectionBody": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+    },
+    "ride": {
+      "title": "ride",
+      "teaser": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "sectionHeading": "lorem ipsum",
+      "sectionBody": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+    },
+    "darina": {
+      "title": "Darina",
+      "teaser": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "sectionHeading": "lorem ipsum",
+      "sectionBody": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+    }
   }
 }

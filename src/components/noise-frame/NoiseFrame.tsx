@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react'
 import {
   clampConfig,
-  DEFAULT_NOISE_FRAME_CONFIG,
+  randomNoiseFrameConfig,
   type NoiseFrameConfig,
 } from './noiseFrameConfig'
 import { NoiseFrameDevPanel } from './NoiseFrameDevPanel'
@@ -22,23 +22,24 @@ export function NoiseFrame({
   devMode = false,
   defaults,
 }: NoiseFrameProps) {
-  const [config, setConfig] = useState(() =>
-    clampConfig({ ...DEFAULT_NOISE_FRAME_CONFIG, ...defaults }),
-  )
+  const [config, setConfig] = useState(() => randomNoiseFrameConfig(defaults))
   const bgRef = useRef<HTMLDivElement>(null)
   const overlayRef = useRef<HTMLDivElement>(null)
   const { frameUrl, overscanPx } = useNoiseFrames(
     bgRef,
     config.density,
-    config.rotateDeg,
-    config.shiftPx,
+    config.shiftX,
+    config.shiftY,
+    config.rotate,
+    config.scale,
   )
 
   usePointerParallax(overlayRef, {
     enabled: true,
-    rotateDeg: config.rotateDeg,
-    shiftPx: config.shiftPx,
-    cursorMode: config.cursorMode,
+    shiftX: config.shiftX,
+    shiftY: config.shiftY,
+    rotate: config.rotate,
+    scale: config.scale,
   })
 
   const rootClass = ['noise-frame', className ?? ''].filter(Boolean).join(' ')

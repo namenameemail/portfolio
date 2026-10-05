@@ -9,7 +9,9 @@
     "cvBio": "cv/bio",
     "projects": "projects",
     "contact": "contact",
-    "locale": "english"
+    "locale": "en",
+    "open": "menu",
+    "close": "close"
   },
   "pages": {
     "cvBio": "cv/bio",

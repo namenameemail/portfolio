@@ -30,6 +30,7 @@ export function useAimTarget(
   containerRef: RefObject<HTMLElement | null>,
   itemRefs: RefObject<Partial<Record<AimMenuItemId, HTMLElement | null>>>,
   enabled: boolean,
+  skipBottomRef: RefObject<boolean>,
 ) {
   const [activeId, setActiveId] = useState<AimMenuItemId | null>(null)
   const pointerRef = useRef<Point | null>(null)
@@ -68,6 +69,7 @@ export function useAimTarget(
         let bestDelta = Infinity
 
         for (const item of AIM_MENU_ITEMS) {
+          if (skipBottomRef.current && item.edge === 'bottom') continue
           const el = refs[item.id]
           if (!el) continue
           const anchor = readAnchor(el)

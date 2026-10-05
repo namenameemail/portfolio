@@ -1,4 +1,16 @@
+:root {
+  --noise-strip-bar: clamp(2rem, 8vh, 10rem);
+  --noise-strip-bar: clamp(2rem, 8dvh, 10rem);
+  --noise-strip-open: clamp(12rem, 46vh, 36rem);
+  --noise-strip-open: clamp(12rem, 46dvh, 36rem);
+  --noise-strip: var(--noise-strip-bar);
+}
+
 .landing-hero {
+  position: sticky;
+  top: calc(var(--noise-strip) - 100vh);
+  top: calc(var(--noise-strip) - 100dvh);
+  z-index: 1;
   height: 100vh;
   height: 100dvh;
 }

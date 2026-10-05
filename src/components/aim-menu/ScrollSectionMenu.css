@@ -1,0 +1,144 @@
+.scroll-section-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  height: var(--noise-strip-bar, 50px);
+  padding-right: clamp(1.5rem, 4vw, 10rem);
+  font-size: min(1.55rem, var(--noise-strip-bar, 50px));
+}
+
+.scroll-section-menu__measure {
+  position: absolute;
+  width: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.scroll-section-menu__measure--bar {
+  height: var(--noise-strip-bar, 50px);
+}
+
+.scroll-section-menu__measure--open {
+  height: var(--noise-strip-open, 40vh);
+}
+
+.scroll-section-menu__list {
+  display: flex;
+  align-items: center;
+}
+
+.scroll-section-menu__burger {
+  display: none;
+  width: 2.75rem;
+  height: var(--noise-strip-bar, 50px);
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: #fff;
+  cursor: pointer;
+  outline: none;
+}
+
+.scroll-section-menu__burger span {
+  display: block;
+  width: 1.2rem;
+  height: 1.5px;
+  background: currentColor;
+}
+
+.scroll-section-menu.is-compact {
+  --menu-fixed: 1.55rem;
+  left: 0;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  height: var(--noise-strip, 50px);
+  overflow: hidden;
+  padding-right: clamp(1.5rem, 4vw, 3rem);
+}
+
+.scroll-section-menu.is-compact .scroll-section-menu__burger {
+  display: flex;
+  flex: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.scroll-section-menu.is-open .scroll-section-menu__burger {
+  width: auto;
+  height: 1em;
+  padding: 0 0.3em;
+  font-family: var(--font-serif);
+  font-size: var(--menu-fixed);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  text-transform: lowercase;
+}
+
+.scroll-section-menu.is-compact .scroll-section-menu__list {
+  flex-direction: column;
+  align-items: flex-end;
+  padding-bottom: 1.25rem;
+  font-size: var(--menu-fixed);
+}
+
+.scroll-section-menu.is-open .scroll-section-menu__list {
+  padding-top: 0.65em;
+}
+
+.scroll-section-menu.is-compact .scroll-section-menu__fit--spaced {
+  padding-left: 0;
+  padding-top: 0.65em;
+}
+
+.scroll-section-menu__slot {
+  display: block;
+  overflow: hidden;
+  flex: none;
+  min-width: 0;
+}
+
+.scroll-section-menu__slot[aria-hidden='true'] {
+  pointer-events: none;
+}
+
+.scroll-section-menu__fit {
+  display: block;
+  width: max-content;
+}
+
+.scroll-section-menu__fit--spaced {
+  padding-left: clamp(1.5rem, 4vw, 10rem);
+}
+
+.scroll-section-menu__item {
+  margin: 0;
+  padding: 0 0.3em;
+  white-space: nowrap;
+  border: 0;
+  background: transparent;
+  color: #fff;
+  font-family: var(--font-serif);
+  font-size: inherit;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  height: 1em;
+  text-transform: lowercase;
+  cursor: pointer;
+  outline: none;
+}
+
+.scroll-section-menu__item:focus,
+.scroll-section-menu__item:focus-visible,
+.scroll-section-menu__burger:focus,
+.scroll-section-menu__burger:focus-visible {
+  outline: none;
+}

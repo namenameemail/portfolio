@@ -9,7 +9,7 @@
 }
 
 .projects--expanded .landing-panel__title {
-  padding-inline: clamp(1.5rem, 4vw, 3rem);
+  margin-left: clamp(1.5rem, 4vw, 3rem);
   margin-bottom: 1rem;
 }
 
@@ -47,7 +47,7 @@
 .projects__group-title {
   margin: 0 0 1.25rem;
   font-family: var(--font-serif);
-  font-size: clamp(1rem, 0.95rem + 0.3vw, 1.2rem);
+  font-size: var(--font-size-label);
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: lowercase;
@@ -101,7 +101,7 @@
 }
 
 .projects__card--solo .projects__card-name {
-  font-size: clamp(1.35rem, 1.15rem + 0.7vw, 1.85rem);
+  font-size: var(--font-size-display);
 }
 
 .projects__card-media {
@@ -113,7 +113,7 @@
 
 .projects__card-name {
   font-family: var(--font-serif);
-  font-size: clamp(1.1rem, 1rem + 0.4vw, 1.35rem);
+  font-size: var(--font-size-heading);
   font-weight: 600;
   letter-spacing: 0.02em;
   text-transform: lowercase;
@@ -121,7 +121,7 @@
 
 .projects__card-teaser {
   font-family: var(--font-sans);
-  font-size: clamp(0.85rem, 0.8rem + 0.2vw, 0.95rem);
+  font-size: var(--font-size-small);
   line-height: 1.45;
   color: #444;
 }
@@ -169,7 +169,7 @@
 .projects__name {
   margin: 0;
   font-family: var(--font-serif);
-  font-size: clamp(1.25rem, 1.1rem + 0.6vw, 1.75rem);
+  font-size: var(--font-size-display);
   font-weight: 600;
   letter-spacing: 0.02em;
   text-transform: lowercase;
@@ -184,7 +184,7 @@
 .projects__heading {
   margin: 0;
   font-family: var(--font-serif);
-  font-size: var(--font-size-button);
+  font-size: var(--font-size-heading);
   font-weight: 600;
   letter-spacing: 0.04em;
   text-transform: lowercase;
@@ -193,7 +193,7 @@
 .projects__text {
   margin: 0;
   font-family: var(--font-sans);
-  font-size: clamp(0.9rem, 0.85rem + 0.25vw, 1.05rem);
+  font-size: var(--font-size-body);
   line-height: 1.55;
   color: #333;
   white-space: pre-line;

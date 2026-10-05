@@ -10,4 +10,4 @@ alwaysApply: true
 - Read strings with `t('section.key')` from `useLocale()`; do not hardcode UI text in components
 - Identifiers, file names, and code stay in English; only visible copy is localized
 - Add a matching `MessageKey` in [`src/i18n/locales.ts`](src/i18n/locales.ts) when introducing a new key
-- Locales are `ru` and `en`; the locale menu item shows the current language name (`русский` / `english`) and cycles them
+- Locales are `ru` and `en`; the locale menu item shows the current language name (`ру` / `en`) and cycles them

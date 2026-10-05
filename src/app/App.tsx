@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { AimMenu } from '../components/aim-menu/AimMenu'
 import type { AimMenuItemId } from '../components/aim-menu/aimMenuItems'
+import { ScrollSectionMenu } from '../components/aim-menu/ScrollSectionMenu'
 import { NoiseFrame } from '../components/noise-frame/NoiseFrame'
 import { useLocale } from '../i18n/useLocale'
 import { FocalPage } from '../pages/focal/FocalPage'
@@ -72,6 +73,7 @@ export function App() {
       <CvBio />
       <Projects />
       <Contact />
+      <ScrollSectionMenu onSelect={onSelect} />
     </>
   )
 }

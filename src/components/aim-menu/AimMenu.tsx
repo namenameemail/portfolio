@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { motion } from 'motion/react'
 import { useLocale } from '../../i18n/useLocale'
 import {
@@ -30,16 +30,33 @@ export function AimMenu({
   const itemRefs = useRef<Partial<Record<AimMenuItemId, HTMLElement | null>>>({})
   const finePointer = useFinePointer()
   const aimEnabled = finePointer && !covered
+  const [bottomHidden, setBottomHidden] = useState(false)
+  const skipBottomRef = useRef(false)
+  skipBottomRef.current = bottomHidden
 
   const { activeId, pointerRef, centerRef } = useAimTarget(
     containerRef,
     itemRefs,
     aimEnabled,
+    skipBottomRef,
   )
 
   const setItemRef = (id: AimMenuItemId, el: HTMLElement | null) => {
     itemRefs.current[id] = el
   }
+
+  useEffect(() => {
+    const onScroll = () => {
+      const sample = itemRefs.current[AIM_MENU_BOTTOM[0].id]
+      const height = sample?.offsetHeight ?? 0
+      const next = window.scrollY > height
+      setBottomHidden((prev) => (prev === next ? prev : next))
+    }
+
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
 
   const onClick = () => {
     if (!aimEnabled || !activeId) return
@@ -79,7 +96,14 @@ export function AimMenu({
         ))}
       </nav>
 
-      <nav className="aim-menu__rail aim-menu__rail--bottom" aria-label={t('menu.bottom')}>
+      <motion.nav
+        className="aim-menu__rail aim-menu__rail--bottom"
+        aria-label={t('menu.bottom')}
+        aria-hidden={bottomHidden}
+        initial={false}
+        animate={{ opacity: bottomHidden ? 0 : 1 }}
+        transition={{ duration: 0.2, ease: 'easeOut' }}
+      >
         {AIM_MENU_BOTTOM.map((item) => (
           <AimMenuItem
             key={item.id}
@@ -89,7 +113,7 @@ export function AimMenu({
             onRef={setItemRef}
           />
         ))}
-      </nav>
+      </motion.nav>
 
       {aimEnabled ? (
         <AimMenuDevOverlay

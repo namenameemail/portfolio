@@ -8,7 +8,7 @@
 .cv-bio__lead {
   margin: 0;
   font-family: var(--font-serif);
-  font-size: clamp(1rem, 0.9rem + 0.4vw, 1.25rem);
+  font-size: var(--font-size-lead);
   line-height: 1.55;
 }
 

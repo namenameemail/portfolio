@@ -13,7 +13,7 @@ export type ProjectId =
   | 'darina'
 
 type ProjectSection = {
-  heading: MessageKey
+  heading?: MessageKey
   body: MessageKey
 }
 
@@ -28,11 +28,12 @@ export type Project = {
   sections: ProjectSection[]
 }
 
-export type ProjectGroupId = 'web' | 'devices' | 'solo'
+export type ProjectGroupId = 'web' | 'audio' | 'devices' | 'solo'
 
 export type ProjectGroup = {
   id: ProjectGroupId
   titleKey: MessageKey | null
+  bodyKey?: MessageKey
   projectIds: ProjectId[]
 }
 
@@ -81,14 +82,15 @@ export const PROJECTS: Project[] = [
     gif: '/projects/aup/preview.gif',
     video: '/projects/aup/demo.mp4',
     videoAspect: '1 / 1',
-    sections: mockSections('aup'),
+    sections: [{ body: 'projects.aup.sectionBody' }],
   },
   {
     id: 'cchhees',
     titleKey: 'projects.cchhees.title',
     teaserKey: 'projects.cchhees.teaser',
     color: '#d4b8a5',
-    sections: mockSections('cchhees'),
+    gif: '/projects/cchhees/preview.png',
+    sections: [{ body: 'projects.cchhees.sectionBody' }],
   },
   {
     id: 'hover',
@@ -109,7 +111,7 @@ export const PROJECTS: Project[] = [
     titleKey: 'projects.filter.title',
     teaserKey: 'projects.filter.teaser',
     color: '#b9c9a8',
-    sections: mockSections('filter'),
+    sections: [],
   },
   {
     id: 'mouse-1',
@@ -133,7 +135,7 @@ export const PROJECTS: Project[] = [
     titleKey: 'projects.ride.title',
     teaserKey: 'projects.ride.teaser',
     color: '#8fa3b0',
-    sections: mockSections('ride'),
+    sections: [{ body: 'projects.ride.sectionBody' }],
   },
   {
     id: 'darina',
@@ -148,16 +150,24 @@ export const PROJECT_GROUPS: ProjectGroup[] = [
   {
     id: 'web',
     titleKey: 'projects.groups.web',
-    projectIds: ['rasterscape', 'aup', 'cchhees', 'hover', 'waalll', 'filter'],
+    bodyKey: 'projects.groups.webBody',
+    projectIds: ['rasterscape', 'aup', 'cchhees', 'hover', 'waalll'],
+  },
+  {
+    id: 'audio',
+    titleKey: 'projects.groups.audio',
+    projectIds: ['filter'],
   },
   {
     id: 'devices',
     titleKey: 'projects.groups.devices',
+    bodyKey: 'projects.groups.devicesBody',
     projectIds: ['mouse-1', 'piramidi'],
   },
   {
     id: 'solo',
     titleKey: null,
+    bodyKey: 'projects.groups.soloBody',
     projectIds: ['ride', 'darina'],
   },
 ]

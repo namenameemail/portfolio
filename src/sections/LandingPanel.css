@@ -1,6 +1,6 @@
 .landing-panel {
   position: relative;
-  padding: clamp(1.5rem, 4vw, 3rem);
+  padding: var(--panel-pad);
   box-sizing: border-box;
   background: #fff;
   color: #111;

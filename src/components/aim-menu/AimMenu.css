@@ -39,7 +39,7 @@
   margin: 0;
   padding: 0.12em 0.3em;
   font-family: var(--font-serif);
-  font-size: clamp(1.125rem, 3.2vmin, 4.25rem);
+  font-size: var(--font-size-menu);
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: lowercase;

@@ -22,18 +22,18 @@ export function animateScrollTo(top: number, duration = 0.75) {
   return active
 }
 
-export function animateScrollToElement(el: HTMLElement, duration = 0.75) {
+export function animateScrollToElement(el: HTMLElement, duration = 0.75, offset = 0) {
   active?.stop()
   const from = window.scrollY
   active = animate(0, 1, {
     duration,
     ease: [0.22, 1, 0.36, 1],
     onUpdate: (progress) => {
-      const target = documentTop(el)
+      const target = documentTop(el) + offset
       window.scrollTo(0, from + (target - from) * progress)
     },
     onComplete: () => {
-      window.scrollTo(0, documentTop(el))
+      window.scrollTo(0, documentTop(el) + offset)
       active = null
     },
   })

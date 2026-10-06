@@ -1,4 +1,4 @@
 .contact.landing-panel {
-  min-height: 100vh;
-  min-height: 100dvh;
+  min-height: calc(100vh + var(--panel-pad));
+  min-height: calc(100dvh + var(--panel-pad));
 }

@@ -90,7 +90,7 @@ function ScrollSectionMenuSlot({
 
 export function ScrollSectionMenu({ onSelect }: ScrollSectionMenuProps) {
   const { t, cycleLocale } = useLocale()
-  const [currentId, setCurrentId] = useState<PageId | null>(null)
+  const [currentId, setCurrentId] = useState<PageId | null>(readCurrentSection)
   const animateWidth = useRef(false)
   const { compact, open, setOpen, barRef, openRef } = useCompactMenu()
 
@@ -149,21 +149,17 @@ export function ScrollSectionMenu({ onSelect }: ScrollSectionMenuProps) {
           aria-expanded={open}
           aria-controls="scroll-section-menu-list"
           aria-label={open ? t('menu.close') : t('menu.open')}
-          initial={false}
-          animate={{ color: '#fff', backgroundColor: 'rgba(255,255,255,0)' }}
-          whileHover={open ? { color: '#111', backgroundColor: '#fff' } : undefined}
-          transition={{ duration: 0.12, ease: 'easeOut' }}
           onClick={() => setOpen((value) => !value)}
         >
-          {open ? (
-            'x'
-          ) : (
-            <>
-              <span />
-              <span />
-              <span />
-            </>
-          )}
+          <motion.span
+            className="scroll-section-menu__burger-label"
+            initial={false}
+            animate={{ color: '#fff', backgroundColor: 'rgba(255,255,255,0)' }}
+            whileHover={{ color: '#111', backgroundColor: '#fff' }}
+            transition={{ duration: 0.12, ease: 'easeOut' }}
+          >
+            {open ? 'x' : t('menu.open')}
+          </motion.span>
         </motion.button>
       ) : null}
       <div

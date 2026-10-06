@@ -22,11 +22,76 @@
     "back": "back"
   },
   "cvBio": {
-    "lead": "Short intro. Bio and approach text will go here.",
-    "sectionExperience": "experience",
-    "experienceBody": "Experience stub: roles, places, years.",
-    "sectionSkills": "skills",
-    "skillsBody": "Skills stub: stack, tools, interests."
+    "role": "Artist, media artist, developer.",
+    "place": "Moscow (hometown Novozybkov, Bryansk region)",
+    "born": "b. 1995",
+    "education": "education",
+    "exhibitions": "exhibitions",
+    "social": "social",
+    "edu": {
+      "baumann": {
+        "years": "2012 — 2016",
+        "text": "Bauman Moscow State Technical University, Computer Software and Information Technologies"
+      },
+      "rodchenko": {
+        "years": "2024 — 2027",
+        "text": "Rodchenko School"
+      }
+    },
+    "show": {
+      "space": {
+        "year": "2024",
+        "title": "Space Without Place",
+        "place": "SI19 Gallery, Moscow, Russia"
+      },
+      "glitch": {
+        "year": "2025",
+        "title": "Aesthetics of Error",
+        "place": "Krasnokholmskaya Gallery, Moscow, Russia"
+      },
+      "sludge": {
+        "year": "2025",
+        "title": "Sludge Estate",
+        "place": "Yaroslavskoye Highway, Moscow, Russia"
+      },
+      "galeev": {
+        "year": "2025",
+        "title": "Galeev Readings",
+        "place": "Smena Centre for Contemporary Culture, Kazan, Russia"
+      },
+      "prometheus": {
+        "year": "2025",
+        "title": "New Prometheans",
+        "place": "Krasnokholmskaya Gallery, Moscow, Russia"
+      },
+      "neural": {
+        "year": "2026",
+        "title": "Neural Intensive",
+        "place": "Krasnokholmskaya Gallery, Moscow, Russia"
+      },
+      "photo": {
+        "year": "2026",
+        "title": "Photo Exhibition",
+        "place": "Korney Gallery, Moscow, Russia"
+      },
+      "graphics": {
+        "year": "2026",
+        "title": "Graphics from Various Years",
+        "place": "Rodchenko School Exhibition Space, Moscow, Russia"
+      },
+      "mice": {
+        "year": "2026",
+        "title": "Mikhail Pavlov’s Collection of Computer Mice",
+        "place": "Museum of Computing Technology, Moscow, Russia"
+      }
+    },
+    "socialLinks": {
+      "telegram": "Telegram channel",
+      "graphics": "Graphics",
+      "photo": "Photo",
+      "graffiti": "Graffiti",
+      "computer": "Computer graphics"
+    }
   },
   "spectral": {
     "mark": "SEE"
@@ -34,7 +99,15 @@
   "projects": {
     "groups": {
       "web": "web",
-      "devices": "devices"
+      "audio": "audio",
+      "devices": "devices",
+      "webBody": "Projects united by an inquiry into web technologies, and into the web itself as a universal medium for making the author's own tools.",
+      "devicesBody": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "soloBody": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    },
+    "index": {
+      "lead": "projects are split into",
+      "also": "as well as"
     },
     "rasterscape": {
       "title": "rasterscape",
@@ -50,15 +123,13 @@
     },
     "aup": {
       "title": "aup",
-      "teaser": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "sectionHeading": "lorem ipsum",
-      "sectionBody": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+      "teaser": "A polyphonic browser synthesizer",
+      "sectionBody": "You can add an unlimited number of oscillators. Each oscillator can have an unlimited number of parameter-change rows. In each row you choose a parameter name and enter the value it will change to when that row's trigger button is pressed, or the keyboard key that corresponds to it.\n\nOscillators and their ADSR can change the parameter values of other oscillators."
     },
     "cchhees": {
       "title": "cchhees",
-      "teaser": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "sectionHeading": "lorem ipsum",
-      "sectionBody": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+      "teaser": "An editor for chess-like games.",
+      "sectionBody": "Chess acts as a random element for building the fractal of the interface.\n\nFor this program, as an artwork, it matters that the programmability of the program comes to the foreground relative to its utilitarian function, while the utilitarian function cannot be absent — otherwise the program would lose in programmability. It is chosen so as to meet that requirement."
     },
     "hover": {
       "title": ":hover",
@@ -74,9 +145,7 @@
     },
     "filter": {
       "title": "filter",
-      "teaser": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "sectionHeading": "lorem ipsum",
-      "sectionBody": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+      "teaser": "A synthesizer based on a frequency FFT filter with graphic control. It generates sounds from a drawing by spectrally filtering noise."
     },
     "mouse1": {
       "title": "mouse 1",
@@ -92,9 +161,8 @@
     },
     "ride": {
       "title": "ride",
-      "teaser": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "sectionHeading": "lorem ipsum",
-      "sectionBody": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+      "teaser": "A VJ modification of a game. Sampling interactivity.",
+      "sectionBody": "A modified computer game runs on one computer. The game's video stream is sent to a second computer over NDI. On the second computer the stream is used to build collage 3D video scenes in Max.\n\nThe game and the Max scene are controlled from one keyboard. The signal from that keyboard is read with an Arduino Uno and a USB Host Shield, then sent to the first computer by emulating a USB HID device with an Arduino Micro, and to the second computer running Max over a serial port.\n\nSampling the game as a whole, together with its interactivity."
     },
     "darina": {
       "title": "Darina",

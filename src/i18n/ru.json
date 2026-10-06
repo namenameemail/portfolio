@@ -22,11 +22,76 @@
     "back": "назад"
   },
   "cvBio": {
-    "lead": "Краткое введение. Здесь будет текст о вас и подходе к работе.",
-    "sectionExperience": "опыт",
-    "experienceBody": "Заготовка блока опыта: места работы, роли, годы.",
-    "sectionSkills": "навыки",
-    "skillsBody": "Заготовка блока навыков: стек, инструменты, интересы."
+    "role": "Художник, медиахудожник, разработчик.",
+    "place": "Москва, (родной город Новозыбков, Брянская обл)",
+    "born": "1995 г.р.",
+    "education": "образование",
+    "exhibitions": "выставки",
+    "social": "социальные сети",
+    "edu": {
+      "baumann": {
+        "years": "2012 — 2016",
+        "text": "МГТУ им. Н.Э. Баумана, Программное обеспечение ЭВМ и информационные технологии"
+      },
+      "rodchenko": {
+        "years": "2024 — 2027",
+        "text": "Школа Родченко"
+      }
+    },
+    "show": {
+      "space": {
+        "year": "2024",
+        "title": "Пространство без места",
+        "place": "SI19 Gallery, Москва, Россия"
+      },
+      "glitch": {
+        "year": "2025",
+        "title": "Эстетика ошибки",
+        "place": "Галерея Краснохолмская, Москва, Россия"
+      },
+      "sludge": {
+        "year": "2025",
+        "title": "Усадьба Сладж",
+        "place": "Ярославское шоссе, Москва, Россия"
+      },
+      "galeev": {
+        "year": "2025",
+        "title": "Галеевские чтения",
+        "place": "Центр современной культуры «Смена», Казань, Россия"
+      },
+      "prometheus": {
+        "year": "2025",
+        "title": "Новые Прометеи",
+        "place": "Галерея Краснохолмская, Москва, Россия"
+      },
+      "neural": {
+        "year": "2026",
+        "title": "Нейронный интенсив",
+        "place": "Галерея Краснохолмская, Москва, Россия"
+      },
+      "photo": {
+        "year": "2026",
+        "title": "Фотовыставка",
+        "place": "Галерея Корней, Москва, Россия"
+      },
+      "graphics": {
+        "year": "2026",
+        "title": "Графика разных лет",
+        "place": "Выставочное пространство Школы Родченко, Москва, Россия"
+      },
+      "mice": {
+        "year": "2026",
+        "title": "Коллекция компьютерных мышек Михаила Павлова",
+        "place": "Музей вычислительной техники, Москва, Россия"
+      }
+    },
+    "socialLinks": {
+      "telegram": "Tg-канал",
+      "graphics": "Графика",
+      "photo": "Фото",
+      "graffiti": "Графити",
+      "computer": "Компьютерная графика"
+    }
   },
   "spectral": {
     "mark": "SEE"
@@ -34,7 +99,15 @@
   "projects": {
     "groups": {
       "web": "веб",
-      "devices": "девайсы"
+      "audio": "аудио",
+      "devices": "девайсы",
+      "webBody": "Проекты объединенные темой исследования веб-технологий и собственно веба как универсальной среды для создания авторских инструментов.",
+      "devicesBody": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "soloBody": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    },
+    "index": {
+      "lead": "проекты разбиты на",
+      "also": "а также"
     },
     "rasterscape": {
       "title": "rasterscape",
@@ -50,15 +123,13 @@
     },
     "aup": {
       "title": "aup",
-      "teaser": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "sectionHeading": "lorem ipsum",
-      "sectionBody": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+      "teaser": "Полифонический браузерный синтезатор",
+      "sectionBody": "Можно добавлять неограниченное количество осцилляторов. Для каждого осциллятора можно добавить неограниченное количество строк изменения параметров. В каждой такой строке можно выбрать имя параметра и ввести значение на которое параметр будет изменен, когда будет нажата кнопка-триггер в этой строке или соответствующая ей клавиша клавиатуры.\n\nЕсть возможность использовать осцилляторы и их adsr для изменения значений параметров других осцилляторов."
     },
     "cchhees": {
       "title": "cchhees",
-      "teaser": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "sectionHeading": "lorem ipsum",
-      "sectionBody": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+      "teaser": "Редактор шахматоподобных игр.",
+      "sectionBody": "Шахматы выступают как случайный элемент для построения фрактала интерфейса.\n\nДля этой программы, как художественной работы, важно, чтобы программовость программы вышла на передний план по отношению к ее утилитарной функции, но при этом утилитарная функция не может отсутствовать, т.к. тогда программа потеряла бы в программовости. Таким образом она подобрана, чтобы соответствовать требованию."
     },
     "hover": {
       "title": ":hover",
@@ -74,9 +145,7 @@
     },
     "filter": {
       "title": "filter",
-      "teaser": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "sectionHeading": "lorem ipsum",
-      "sectionBody": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+      "teaser": "Синтезатор на основе частотного fft-фильтра с графическим управлением. Позволяет генерировать звуки в соответствии с рисунком путем спектральной фильтрации шума."
     },
     "mouse1": {
       "title": "mouse 1",
@@ -92,9 +161,8 @@
     },
     "ride": {
       "title": "ride",
-      "teaser": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "sectionHeading": "lorem ipsum",
-      "sectionBody": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+      "teaser": "vj-модификация игры. сэмплирование интерактивности.",
+      "sectionBody": "Модифицированная компьютерная игра запущена на одном компьютере. Видео-стрим игры отправляется на второй компьютер по протоколу NDI. На втором компьютере видеопоток используется для построение коллажных 3д-видео-сцен в программе Max.\n\nУправление игрой и сценой в Max осуществляется с одной клавиатуры. Для этого сигнал с этой клавиатуры считывается с помощью Arduino Uno и USB Host Shield, а затем отправляется на первый компьютер путем имитации usb-hid устройства с помощью Arduino Micro, и на второй компьютер с Max по serial-порту.\n\nСэмплирование игры целиком вместе с интерактивностью."
     },
     "darina": {
       "title": "Дарина",

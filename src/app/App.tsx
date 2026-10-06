@@ -17,7 +17,10 @@ import './Landing.css'
 
 function scrollToSection(id: PageId) {
   const el = document.getElementById(id)
-  if (el) animateScrollToElement(el)
+  if (!el) return
+  const title = el.querySelector('.landing-panel__title')
+  const offset = title ? parseFloat(getComputedStyle(el).paddingTop) || 0 : 0
+  animateScrollToElement(el, 0.75, offset)
 }
 
 export function App() {

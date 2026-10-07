@@ -1,0 +1,14 @@
+---
+description: UI animations must use Motion for React
+alwaysApply: true
+---
+
+# Motion
+
+- All UI animations go through **Motion for React** (`motion/react`)
+- Do not add enter/exit, state, or interactive motion as CSS `transition` / `@keyframes` when Motion can express it
+- Import from `motion/react` (e.g. `motion.div`, `AnimatePresence`); do not use the old `framer-motion` package name
+- Prefer declarative `animate` / `initial` / `exit` / `transition` on `motion.*` components
+- Keep layout and non-animated look in CSS; animate opacity, transform, colors, and similar props with Motion
+- Match existing Motion usage in the repo (durations, easing) unless the task asks for a new feel
+- Do not add another animation library (GSAP, anime.js, etc.) unless the user explicitly asks

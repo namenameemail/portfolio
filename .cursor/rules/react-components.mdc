@@ -1,0 +1,34 @@
+---
+description: React and TypeScript component patterns
+globs: "**/*.{ts,tsx}"
+alwaysApply: false
+---
+
+# React Components
+
+- Use functional components only; no class components
+- One component per file; export a named function matching the file name
+- Split when a file exceeds ~100 lines or mixes layout, data, and UI concerns
+- Put reusable logic in custom hooks (`useX`), not inside large components
+- Type props explicitly; never use `any`
+- Colocate component CSS next to the component (`Component.tsx` + `Component.css`)
+- Keep `App.tsx` as composition only: layout + sections, no business logic
+
+```tsx
+// ❌ BAD — multiple concerns in one file
+export function Projects() {
+  const [items, setItems] = useState([])
+  useEffect(() => { fetch('/api').then(...) }, [])
+  return <section>{/* 80 lines of markup */}</section>
+}
+
+// ✅ GOOD — hook + small presentational pieces
+export function Projects() {
+  const { items } = useProjects()
+  return (
+    <section>
+      {items.map((item) => <ProjectCard key={item.id} project={item} />)}
+    </section>
+  )
+}
+```
